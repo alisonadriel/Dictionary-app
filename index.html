@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="author" content="Ortalyarts" />
+  <meta
+    name="description"
+    content="Dictionary web app"
+  />
+  <meta
+    name="keywords"
+    content="dictionary, app, audio"
+  />
+  <meta
+    property="og:title"
+    content="Dictionary app"
+  />
+  <meta
+    property="og:description"
+    content="Frontend Mentor | Dictionary web app"
+  />
+
+  <link rel="stylesheet" href="styles.css" type="text/css">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Dictionary web app</title>
+</head>
+<body>
+
+  <div class="main-container">
+    <header>
+      <div class="top-bar">
+        <a href="#form" class="skip-nav-link">Skip to main content</a>
+        <div class="logo">        
+          <img src="./logo.svg"  alt="Snap logo" width="32" height="36"/>
+        </div>
+        <div class="switches">
+          <div class="dropdown-container">
+            <button type="button" class="dropdown" aria-haspopup="true" aria-expanded="false" aria-label="Switch font family">Serif</button>
+            <ul id="font-family-list" class="dropdownUL" aria-hidden="true" role="listbox" aria-label="Select new font family">
+              <li role="option"><a href="#" class="ff-sansserif" aria-hidden="true" tabindex="-1">Sans Serif</a></li>
+              <li role="option"><a href="#" class="ff-serif ff-active" aria-hidden="true" tabindex="-1">Serif</a></li>
+              <li role="option"><a href="#" class="ff-mono" aria-hidden="true" tabindex="-1">Mono</a></li>
+            </ul>
+          </div>
+          <div class="switch-holder">
+            <label class="switch-container" for="theme-toggle-button">
+              <input name="theme-switch" id="theme-toggle-button" type="checkbox" >
+              <span class="screen-reader-only" id="toggle-announce" >switch to dark theme</span>
+            </label>
+            <div class="moon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22"><path fill="none" stroke="" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M1 10.449a10.544 10.544 0 0 0 19.993 4.686C11.544 15.135 6.858 10.448 6.858 1A10.545 10.545 0 0 0 1 10.449Z"/></svg>
+            </div> 
+          </div>
+        </div>
+      </div>
+    </header>
+    <main id="main">
+      <div class="search-holder">
+        <form id="form" novalidate tabindex="-1">
+          <label for="search-term"><span class="screen-reader-only">Search word</span>
+            <input type="text" id="search-term" class="search-input" placeholder="Search for any word..." >
+          </label>
+          <button type="submit" class="search-button"><span class="screen-reader-only">Search</span></button>
+          <div id="error" class="hide headingS" aria-live="polite"></div> 
+        </form>
+      </div>
+
+      <section class="results-holder" id="result" tabindex="-1" aria-label="Search results">
+        
+        <div class="searched-word">
+          <div>
+            <h1 id="term" class="headingL">keyboard</h1>
+            <p  id="transcription" class="headingM">/'ki:bɔ:d/</p>
+          </div>
+          
+          <div class="sound-player">
+            <button class="play" id ="audioBtn" aria-label="Play the audio file to hear how it sounds">
+              <svg xmlns="http://www.w3.org/2000/svg" width="75" height="75" viewBox="0 0 75 75"><g><circle cx="37.5" cy="37.5" r="37.5" opacity=".25"/><path d="M29 27v21l21-10.5z"/></g></svg>
+            </button>
+          </div>
+        </div>
+        <div id="all-meanings">
+          <div class="title-with-line">
+            <h2 class="headingM italic">noun</h2>
+            <div class="horizontal-line"></div>
+          </div>
+          <div class="meaning">
+            <h3 class="headingS">Meaning</h3>
+            <ul class="bodyM">
+              <li>(etc.) A set of keys used to operate a typewriter, computer etc.</li>
+              <li>A component of many instruments including the piano, organ, and harpsichord consisting of usually black and white keys that cause different tones to be produced when struck.</li>
+              <li>A device with keys of a musical keyboard, used to control electronic sound-producing devices which may be built into or separate from the keyboard device.</li>
+            </ul>
+          </div>
+          <div class="meaning">
+            <h3 class="headingS">Synonyms
+              <span class="synonym">
+                <ul class="synonyms-list" aria-label="Synonyms" role="listbox">
+                      <li role="option"><a href="" class="btn-synonym">electronic keyboard</a></li>
+                  </ul>
+                </span>
+            </h3>
+          </div>
+          <div class="title-with-line">
+            <h2 class="headingM italic">verb</h2>
+            <div class="horizontal-line"></div>
+          </div>
+          <div class="meaning">
+            <h3 class="headingS">Meaning</h3>
+            <ul class="bodyM">
+              <li>To type on a computer keyboard.</li>            
+            </ul>
+            <p class="bodyM example">
+              “Keyboarding is the part of this job I hate the most.”
+            </p>
+          </div>
+        </div>
+        <div class="horizontal-line"></div>
+        <div class="link" id="source-link">
+          <h4 class="bodyS">Source</h4>
+          <div>
+            <a class="bodyS" href="https://en.wiktionary.org/wiki/keyboard" target="_blank"><span class="screen-reader-only">Source link</span><span aria-hidden="true">https://en.wiktionary.org/wiki/keyboard</span><img src="./assets/images/icon-new-window.svg" width="12" height="12" alt="" aria-hidden="true" /></a>
+          </div>
+        </div>
+
+      </section>
+
+      <section id="no-result" class="hide">
+        <p class="emoji">😕</p>
+        <h1 class="headingS" id="no-result-header" tabindex="-1">No Definitions Found</h1>
+        <p class="bodyM">Sorry pal, we couldn't find definitions for the word you were looking for. 
+          You can try the search again at later time or head to the web instead.</p>
+      </section>
+
+    </main>
+    <footer>
+      <p class="bodyS">Challenge by <a href="https://www.frontendmentor.io" target="_blank">Frontend Mentor</a>.</p>
+      <p class="bodyS">Coded by <a href="https://www.ortaly.com/" target="_blank">OrtalyARTS</a>.</p>
+    </footer>
+  </div>
+  
+
+  <script src="script.js" ></script>
+</body>
+</html>
